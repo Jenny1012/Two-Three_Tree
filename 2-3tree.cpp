@@ -1,4 +1,4 @@
-// 10827245 ®á©Éã¸ 10827253 ³¢¬f°¥
+// 10827245 æ¡‘æ€¡è“ 
 #include <iomanip>
 #include <stdio.h>
 #include <string.h>
@@ -30,7 +30,7 @@ typedef struct cT{
 	int gNO;
 	string county ;
 	string department ;
-	int total; // §Ç¸¹
+	int total; // åºè™Ÿ
 
 } collegeType ;
 
@@ -179,9 +179,9 @@ void Mission3 :: print( string schoolname, string departmentname ) {
 
 string collegeList :: token ( int &first , int &i , string line ) {
 		if ( i == 0 )
-			first = 0 ; // ±qÀY¶}©l
+			first = 0 ; // å¾é ­é–‹å§‹
 		else
-			first = i ; // ±q³Q¤Á¹Lªº¦a¤èÄ~Äò(©|¥¼´«¦æ)
+			first = i ; // å¾è¢«åˆ‡éçš„åœ°æ–¹ç¹¼çºŒ(å°šæœªæ›è¡Œ)
 
 		int num = 0 ;
 
@@ -195,7 +195,7 @@ string collegeList :: token ( int &first , int &i , string line ) {
 		else
 			i++ ;
 
-		return line.substr( first, num ) ; // ¤Átoken
+		return line.substr( first, num ) ; // åˆ‡token
 } // token
 
 int collegeList :: turnnum ( string line ) {
@@ -240,9 +240,9 @@ void collegeList :: savefile ( collegeType &content ) {
 
 	content.dname = CList.token( first, num, content.rawR ) ; // department name
 
-	content.category = CList.token( first, num, content.rawR ) ; // ¤é¶¡¢A¶i­×§O
+	content.category = CList.token( first, num, content.rawR ) ; // æ—¥é–“âˆ•é€²ä¿®åˆ¥
 
-	content.level = CList.token( first, num, content.rawR ) ; // µ¥¯Å§O
+	content.level = CList.token( first, num, content.rawR ) ; // ç­‰ç´šåˆ¥
 
 	line = CList.token( first, num, content.rawR ) ; // number of students
 	content.sNO = turnnum( line );
@@ -327,7 +327,7 @@ void AVLTree :: insertnode( tree &root, collegeItem nodeitem ) {
 	newnode->leftPtr = NULL;
 	newnode->rightPtr = NULL;
 
-    if ( root == NULL ) { // ²Ä¤@µ§
+    if ( root == NULL ) { // ç¬¬ä¸€ç­†
     	root = newnode;
     	root->items.push_back( newnode->nodeitem );
     	return;
@@ -547,7 +547,7 @@ twothreetree Tree23 :: split( twothreetree root23 ) {
 	} // if
 
 	vector<collegeItemB> temp;
-	for ( int i = 0 ; i < root23->itemsB.size() ; i++ ) {  // ±N¤¤¶¡­n©¹¤W²¾ªº­È¥ı¦s°_¨Ó
+	for ( int i = 0 ; i < root23->itemsB.size() ; i++ ) {  // å°‡ä¸­é–“è¦å¾€ä¸Šç§»çš„å€¼å…ˆå­˜èµ·ä¾†
 		temp.push_back( root23->itemsB[i] );
 	} // for
 
@@ -789,7 +789,7 @@ twothreetree Tree23 :: create23tree( char* file ) {
 	collegeType content;
 	int total = 1;
 	string line;
-	ifstream infile ; // ÅªÀÉ®×
+	ifstream infile ; // è®€æª”æ¡ˆ
 	infile.open( file ) ;
 
 	getline( infile , line ) ;
@@ -915,7 +915,7 @@ tree AVLTree :: createAVLtree( char* file ) {
 	collegeType content;
 	int total = 1;
 	string line;
-	ifstream infile ; // ÅªÀÉ®×
+	ifstream infile ; // è®€æª”æ¡ˆ
 	infile.open( file ) ;
 
 	getline( infile , line ) ;
@@ -976,34 +976,34 @@ int main() {
 	string name2;
 	bool mission1 = false;
 	bool mission2 = false;
-	int num = 0; // ÃD¸¹
+	int num = 0; // é¡Œè™Ÿ
 	cout << "*****	Search Tree Utilities	*****" << endl;
-	cout << "*****	Â÷¶}	*****: 0" << endl;
-	cout << "*****	¥ô°È¤@	*****: 1" << endl;
-	cout << "*****	¥ô°È¤G	*****: 2" << endl;
-	cout << "½Ğ¿ï¾ÜÂ÷¶}©Î¥ô°È¤@©Î¥ô°È¤G(½Ğ¿é¤J0©Î1©Î2) -> ";
+	cout << "*****	é›¢é–‹	*****: 0" << endl;
+	cout << "*****	ä»»å‹™ä¸€	*****: 1" << endl;
+	cout << "*****	ä»»å‹™äºŒ	*****: 2" << endl;
+	cout << "è«‹é¸æ“‡é›¢é–‹æˆ–ä»»å‹™ä¸€æˆ–ä»»å‹™äºŒ(è«‹è¼¸å…¥0æˆ–1æˆ–2) -> ";
 	while ( scanf( "%d", &num ) != 1 ){
-	   	while( getchar() != '\n' ) ; // Åª±¼½w½Ä°Ïªº¦r¤¸
-	   		cout << "¿é¤J®æ¦¡¿ù»~!!!½Ğ­«·s¿é¤J" << endl;
-			cout << "½Ğ¿ï¾ÜÂ÷¶}©Î¥ô°È¤@©Î¥ô°È¤G(½Ğ¿é¤J0©Î1©Î2©Î3) -> ";
+	   	while( getchar() != '\n' ) ; // è®€æ‰ç·©è¡å€çš„å­—å…ƒ
+	   		cout << "è¼¸å…¥æ ¼å¼éŒ¯èª¤!!!è«‹é‡æ–°è¼¸å…¥" << endl;
+			cout << "è«‹é¸æ“‡é›¢é–‹æˆ–ä»»å‹™ä¸€æˆ–ä»»å‹™äºŒ(è«‹è¼¸å…¥0æˆ–1æˆ–2æˆ–3) -> ";
     } // while
 
     while ( num != 0 ) {
        	if ( num == 1 ) {  // mission one
-     	  	cout << "½Ğ¿é¤J­nÅª¨úªºÀÉ®×¦WºÙ( ex.201,202...... ): " ;
+     	  	cout << "è«‹è¼¸å…¥è¦è®€å–çš„æª”æ¡ˆåç¨±( ex.201,202...... ): " ;
        			cin >> middlename;
        			string input ;
        			input = "input" + middlename + ".txt" ;
        			char* name1 = (char*)input.c_str();
 
-       			ifstream infile ; // ÅªÀÉ®×
+       			ifstream infile ; // è®€æª”æ¡ˆ
 				infile.open( name1 ) ;
-				while ( !infile ) { // µL¦¹ÀÉ®×
+				while ( !infile ) { // ç„¡æ­¤æª”æ¡ˆ
 					if ( strcmp ( middlename.c_str(), "0") == 0  )
 						break  ;
 					else {
-						cout << "¬dµL¦¹ÀÉ®×!!!!½Ğ­«·s¿é¤J!!!!"<< endl ;
-						cout << "½Ğ¿é¤J­nÅª¨úªºÀÉ®×¦WºÙ( ex.201,202...... (0 ¬°Â÷¶}) ): ";
+						cout << "æŸ¥ç„¡æ­¤æª”æ¡ˆ!!!!è«‹é‡æ–°è¼¸å…¥!!!!"<< endl ;
+						cout << "è«‹è¼¸å…¥è¦è®€å–çš„æª”æ¡ˆåç¨±( ex.201,202...... (0 ç‚ºé›¢é–‹) ): ";
 						cin >> middlename;
 						input = "input" + middlename + ".txt" ;
 						name1 = (char*)input.c_str();
@@ -1019,14 +1019,14 @@ int main() {
        			input = "input" + middlename + ".txt" ;
        			char* name1 = (char*)input.c_str();
 
-       			ifstream infile ; // ÅªÀÉ®×
+       			ifstream infile ; // è®€æª”æ¡ˆ
 				infile.open( name1 ) ;
-				while ( !infile ) { // µL¦¹ÀÉ®×
+				while ( !infile ) { // ç„¡æ­¤æª”æ¡ˆ
 					if ( strcmp ( middlename.c_str(), "0") == 0  )
 						break  ;
 					else {
-						cout << "¬dµL¦¹ÀÉ®×!!!!½Ğ­«·s¿é¤J!!!!"<< endl ;
-						cout << "½Ğ¿é¤J­nÅª¨úªºÀÉ®×¦WºÙ( ex.201,202...... (0 ¬°Â÷¶}) ): ";
+						cout << "æŸ¥ç„¡æ­¤æª”æ¡ˆ!!!!è«‹é‡æ–°è¼¸å…¥!!!!"<< endl ;
+						cout << "è«‹è¼¸å…¥è¦è®€å–çš„æª”æ¡ˆåç¨±( ex.201,202...... (0 ç‚ºé›¢é–‹) ): ";
 						cin >> middlename;
 						input = "input" + middlename + ".txt" ;
 						name1 = (char*)input.c_str();
@@ -1039,15 +1039,15 @@ int main() {
 		} // if
 		else {
 			if ( mission1 == false ) {
-				cout << "½Ğ¥ı°õ¦æ¥ô°È¤@" << endl;
+				cout << "è«‹å…ˆåŸ·è¡Œä»»å‹™ä¸€" << endl;
 			} // if
 		}
 		} // else if
 		else if ( num == 3 ) {
 			if ( mission2 == true ) {
-				cout << "½Ğ¿é¤J­n·j´Mªº¾Ç®Õ¦WºÙ : ";
+				cout << "è«‹è¼¸å…¥è¦æœå°‹çš„å­¸æ ¡åç¨± : ";
 				cin >> schoolname;
-				cout << "½Ğ¿é¤J­n·j´Mªº¨t¦WºÙ : " ;
+				cout << "è«‹è¼¸å…¥è¦æœå°‹çš„ç³»åç¨± : " ;
 				cin >> departmentname;
 				tree23.search1( schoolname, root23 );
 				atree.search2( departmentname, root );
@@ -1055,7 +1055,7 @@ int main() {
 			} // if
 			else {
 				if ( mission2 == false ) {
-					cout << "½Ğ¥ı°õ¦æ¥ô°È¤G" << endl;
+					cout << "è«‹å…ˆåŸ·è¡Œä»»å‹™äºŒ" << endl;
 				} // if
 			} // else 
 			
@@ -1063,14 +1063,14 @@ int main() {
 			mission2 = false;
 		} // else if
 		else {
-			cout << "¿é¤J®æ¦¡¿ù»~!!!½Ğ­«·s¿é¤J" << endl;
+			cout << "è¼¸å…¥æ ¼å¼éŒ¯èª¤!!!è«‹é‡æ–°è¼¸å…¥" << endl;
 		} // else
 	
-	cout << "½Ğ¿ï¾ÜÂ÷¶}©Î¥ô°È¤@©Î¥ô°È¤G(½Ğ¿é¤J0©Î1©Î2) -> ";
+	cout << "è«‹é¸æ“‡é›¢é–‹æˆ–ä»»å‹™ä¸€æˆ–ä»»å‹™äºŒ(è«‹è¼¸å…¥0æˆ–1æˆ–2) -> ";
 	while ( scanf( "%d", &num ) != 1 ){
-	   	while( getchar() != '\n' ) ; // Åª±¼½w½Ä°Ïªº¦r¤¸
-	   		cout << "¿é¤J®æ¦¡¿ù»~!!!½Ğ­«·s¿é¤J" << endl;
-			cout << "½Ğ¿ï¾ÜÂ÷¶}©Î¥ô°È¤@©Î¥ô°È¤G(½Ğ¿é¤J0©Î1©Î2) -> " ;
+	   	while( getchar() != '\n' ) ; // è®€æ‰ç·©è¡å€çš„å­—å…ƒ
+	   		cout << "è¼¸å…¥æ ¼å¼éŒ¯èª¤!!!è«‹é‡æ–°è¼¸å…¥" << endl;
+			cout << "è«‹é¸æ“‡é›¢é–‹æˆ–ä»»å‹™ä¸€æˆ–ä»»å‹™äºŒ(è«‹è¼¸å…¥0æˆ–1æˆ–2) -> " ;
     } // while
 
 	}
